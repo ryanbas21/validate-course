@@ -35,7 +35,7 @@ module Main where
       True -> Right xs
   
   stripSpace :: String -> Either Error String
-  stripSpace "" = Left $ Error "Your password cannot be empty"
+  stripSpace "" = Left $ Error "Cannot be left blank"
   stripSpace (x:xs) = 
     case (isSpace x) of 
       True -> stripSpace xs
@@ -47,10 +47,23 @@ module Main where
     >>= allAlpha 
     >>= passwordLength 
 
+  validateUsername :: Username -> Either Error Username
+  validateUsername (Username username) = 
+    stripSpace username 
+    >>= allAlpha 
+    >>= usernameLength
+
+  makeUser :: Username -> Password -> Either Error User
+  makeUser name password =
+    User <$> validateUsername name 
+    <*> validatePassword password
+  
   main :: IO ()
   main = do
+    putStrLn "Please enter a username"
+    username <- Username <$> getLine
     putStrLn "Please enter a password"
     password <- Password <$> getLine
-    print (validatePassword password) 
+    print (makeUser username password) 
 
 
