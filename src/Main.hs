@@ -1,59 +1,56 @@
 module Main where
-  import Data.Char (isAlphaNum, isSpace)
-  
-  maxLength :: String -> Maybe String
-  maxLength "" = Nothing
-  maxLength xs = 
-    case (length xs > 20) of
-      True -> Nothing
-      False -> Just xs
 
-  allAlpha :: String -> Maybe String
-  allAlpha "" = Nothing
+  import Data.Char (isAlphaNum, isSpace)
+
+  newtype Password =
+    Password String deriving (Eq, Show)
+
+  newtype Error = 
+    Error String deriving (Eq, Show)
+
+  newtype Username =
+    Username String deriving (Eq, Show)
+
+  data User = User Username Password 
+    deriving (Eq, Show) 
+
+  passwordLength :: String -> Either Error Password
+  passwordLength "" = Left $ Error "Your password cannot be empty"
+  passwordLength password = 
+    case (length password > 20) of
+      True -> Left $ Error "Your password cannot be longer than 20 characters"
+      False -> Right (Password password) 
+
+  usernameLength :: String -> Either Error Username
+  usernameLength username = 
+    case (length username > 15) of
+      True -> Left $ Error "Your username cannot be longer than 15 characters"
+      False -> Right $ Username username
+  
+  allAlpha :: String -> Either Error String
+  allAlpha "" = Left (Error "Your password cannot be empty")
   allAlpha xs = 
     case (all isAlphaNum xs) of 
-      False -> Nothing 
-      True -> Just xs
-
-  stripSpace :: String -> Maybe String
-  stripSpace "" = Nothing
+      False -> Left $ Error "Your password cannot contain whitespace or special characters" 
+      True -> Right xs
+  
+  stripSpace :: String -> Either Error String
+  stripSpace "" = Left $ Error "Your password cannot be empty"
   stripSpace (x:xs) = 
     case (isSpace x) of 
       True -> stripSpace xs
-      False -> Just (x:xs)
+      False -> Right (x:xs)
 
-  validatePassword :: String -> Maybe String
-  validatePassword password =
-    stripSpace password >>= allAlpha >>= maxLength
+  validatePassword :: Password -> Either Error Password
+  validatePassword (Password password) =
+    stripSpace password 
+    >>= allAlpha 
+    >>= passwordLength 
 
   main :: IO ()
   main = do
     putStrLn "Please enter a password"
-    password <- getLine
+    password <- Password <$> getLine
     print (validatePassword password) 
 
-  checkPassword :: String -> Maybe String
-  checkPassword password = 
-    case stripSpace password of
-     Nothing -> Nothing 
-     Just password'  ->
-       case allAlpha password' of
-         Nothing -> Nothing
-         Just password' ->
-           case maxLength password' of
-             Nothing -> Nothing
-             Just password' -> Just password'
-
-  -- second way
-  checkPasswrd :: String -> String
-  checkPasswrd password =
-    case stripSpace password of
-      Nothing -> "Your password cannot be empty."
-      Just password' -> 
-        case allAlpha password' of
-          Nothing -> "Your password cannot contain white space or special charcters"
-          Just password' -> 
-            case maxLength password' of
-              Nothing -> "Your password is too long. Your password cannot be longer than 20 characters"
-              Just password' -> password'
 
