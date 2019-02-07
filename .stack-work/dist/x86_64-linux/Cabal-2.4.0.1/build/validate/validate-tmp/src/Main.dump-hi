@@ -1,0 +1,1145 @@
+
+==================== FINAL INTERFACE ====================
+2019-02-07 05:03:12.134640311 UTC
+
+interface main:Main 8063
+  interface hash: 9b152b80ac354cc0a3d82bdf1412dc71
+  ABI hash: 93d4f8ec4021aa0470b685f408b3f211
+  export-list hash: 823a4f9a33420873450538d28be68814
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: ada737d377ae8c04dec28b43982d0adf
+  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  plugin_hash: ad164012d6b1e14942349d58b1132007
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.allAlpha
+  Main.main
+  Main.makeUser
+  Main.passwordLength
+  Main.stripSpace
+  Main.usernameLength
+  Main.validatePassword
+  Main.validateUsername
+  Main.Error{Main.Error}
+  Main.Password{Main.Password}
+  Main.User{Main.User}
+  Main.Username{Main.Username}
+module dependencies:
+package dependencies: base-4.12.0.0* ghc-prim-0.5.3
+                      integer-gmp-1.0.2.0
+orphans: base-4.12.0.0:GHC.Float base-4.12.0.0:GHC.Base
+family instance modules: base-4.12.0.0:Control.Applicative
+                         base-4.12.0.0:Data.Functor.Const
+                         base-4.12.0.0:Data.Functor.Identity base-4.12.0.0:Data.Monoid
+                         base-4.12.0.0:Data.Semigroup.Internal base-4.12.0.0:GHC.Generics
+                         base-4.12.0.0:GHC.IO.Exception
+import  -/  base-4.12.0.0:Data.Char 0f6e335e98e2ddac4f2764f212d2f08a
+import  -/  base-4.12.0.0:Data.Either 946a3435d06773e1dbcad1ba5dc18a2c
+import  -/  base-4.12.0.0:Data.Foldable 00188ddf89c975fee76bdfad479443c1
+import  -/  base-4.12.0.0:Data.Functor 22aac80fdb6c7b7f60b4aaab86afee64
+import  -/  base-4.12.0.0:GHC.Base cc906f98291a1b830546e99a96674547
+import  -/  base-4.12.0.0:GHC.Show 4e438f26d903388cc6c2c5d64ed01b98
+import  -/  base-4.12.0.0:GHC.Unicode e72f63c0b07b1495548f1f84ce6c22b5
+import  -/  base-4.12.0.0:Prelude 5c01365ec01f83bd405ac01cbb9a8d76
+import  -/  base-4.12.0.0:System.IO 88c2b1c4079c52d62ed362d4eb9a5302
+import  -/  ghc-prim-0.5.3:GHC.Classes e0d9c979f6368701f34fa421754d2cce
+import  -/  ghc-prim-0.5.3:GHC.Types 57064c9f957b09bc2e360061ad5cae0b
+f23a4be7d771beea64688ca1b8f4045e
+  $fEqError :: GHC.Classes.Eq Main.Error
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Error
+                  GHC.Base.eqString
+                    `cast`
+                  (Sym (Main.N:Error[0])
+                   ->_R Sym (Main.N:Error[0])
+                   ->_R <GHC.Types.Bool>_R)
+                  GHC.Classes.$fEq[]_$s$c/=1
+                    `cast`
+                  (Sym (Main.N:Error[0])
+                   ->_R Sym (Main.N:Error[0])
+                   ->_R <GHC.Types.Bool>_R) -}
+906a72b81a8dbd2658f8055f7825ad72
+  $fEqPassword :: GHC.Classes.Eq Main.Password
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Password
+                  GHC.Base.eqString
+                    `cast`
+                  (Sym (Main.N:Password[0])
+                   ->_R Sym (Main.N:Password[0])
+                   ->_R <GHC.Types.Bool>_R)
+                  GHC.Classes.$fEq[]_$s$c/=1
+                    `cast`
+                  (Sym (Main.N:Password[0])
+                   ->_R Sym (Main.N:Password[0])
+                   ->_R <GHC.Types.Bool>_R) -}
+9e08b9a7eec66a0980add62d01cd4da9
+  $fEqUser :: GHC.Classes.Eq Main.User
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.User Main.$fEqUser_$c== Main.$fEqUser_$c/= -}
+9e08b9a7eec66a0980add62d01cd4da9
+  $fEqUser_$c/= :: Main.User -> Main.User -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SL),1*U(1*U,1*U)><S(SL),1*U(1*U,1*U)>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: Main.User) (y :: Main.User) ->
+                 case x of wild { Main.User a1 a2 ->
+                 case y of wild1 { Main.User b1 b2 ->
+                 case GHC.Base.eqString
+                        a1 `cast` (Main.N:Username[0])
+                        b1 `cast` (Main.N:Username[0]) of wild2 {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True
+                   -> case GHC.Base.eqString
+                             a2 `cast` (Main.N:Password[0])
+                             b2 `cast` (Main.N:Password[0]) of wild3 {
+                        GHC.Types.False -> GHC.Types.True
+                        GHC.Types.True -> GHC.Types.False } } } }) -}
+9e08b9a7eec66a0980add62d01cd4da9
+  $fEqUser_$c== :: Main.User -> Main.User -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SL),1*U(1*U,1*U)><S(SL),1*U(1*U,1*U)>, Inline: [2],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Main.User) (w1 :: Main.User) ->
+                 case w of ww { Main.User ww1 ww2 ->
+                 case w1 of ww3 { Main.User ww4 ww5 ->
+                 Main.$w$c== ww1 ww2 ww4 ww5 } }) -}
+5a89998ec9d8f929cbf414a5f0d24d43
+  $fEqUsername :: GHC.Classes.Eq Main.Username
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Username
+                  GHC.Base.eqString
+                    `cast`
+                  (Sym (Main.N:Username[0])
+                   ->_R Sym (Main.N:Username[0])
+                   ->_R <GHC.Types.Bool>_R)
+                  GHC.Classes.$fEq[]_$s$c/=1
+                    `cast`
+                  (Sym (Main.N:Username[0])
+                   ->_R Sym (Main.N:Username[0])
+                   ->_R <GHC.Types.Bool>_R) -}
+f23a4be7d771beea64688ca1b8f4045e
+  $fShowError :: GHC.Show.Show Main.Error
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Error
+                  Main.$fShowError_$cshowsPrec
+                  Main.$fShowError_$cshow
+                  Main.$fShowError_$cshowList -}
+f23a4be7d771beea64688ca1b8f4045e
+  $fShowError1 :: Main.Error -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <L,1*U><L,U>,
+     Unfolding: (\ (w :: Main.Error) (w1 :: GHC.Base.String) ->
+                 Main.$w$cshowsPrec 0# w w1) -}
+518154f58501e6398036d82f47ee9eb9
+  $fShowError2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Error "#) -}
+2658ca217147be0ad0d4826c766c1c7a
+  $fShowError3 :: [GHC.Types.Char]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.$fShow(,)3
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+f23a4be7d771beea64688ca1b8f4045e
+  $fShowError_$cshow :: Main.Error -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ (x :: Main.Error) ->
+                 GHC.CString.unpackAppendCString#
+                   Main.$fShowError2
+                   (GHC.Types.:
+                      @ GHC.Types.Char
+                      GHC.Show.$fShow(,)3
+                      (GHC.Show.showLitString
+                         x `cast` (Main.N:Error[0])
+                         Main.$fShowError3))) -}
+f23a4be7d771beea64688ca1b8f4045e
+  $fShowError_$cshowList :: [Main.Error] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Main.Error]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__ @ Main.Error Main.$fShowError1 ls s) -}
+f23a4be7d771beea64688ca1b8f4045e
+  $fShowError_$cshowsPrec ::
+    GHC.Types.Int -> Main.Error -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S(S),1*U(U)><L,1*U><L,U>, Inline: [2],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Main.Error)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Main.$w$cshowsPrec ww1 w1 w2 }) -}
+906a72b81a8dbd2658f8055f7825ad72
+  $fShowPassword :: GHC.Show.Show Main.Password
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Password
+                  Main.$fShowPassword_$cshowsPrec
+                  Main.$fShowPassword_$cshow
+                  Main.$fShowPassword_$cshowList -}
+906a72b81a8dbd2658f8055f7825ad72
+  $fShowPassword1 :: Main.Password -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <L,1*U><L,U>,
+     Unfolding: (\ (w :: Main.Password) (w1 :: GHC.Base.String) ->
+                 Main.$w$cshowsPrec1 0# w w1) -}
+4b3877b9409c527763591636d437594e
+  $fShowPassword2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Password "#) -}
+906a72b81a8dbd2658f8055f7825ad72
+  $fShowPassword_$cshow :: Main.Password -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ (x :: Main.Password) ->
+                 GHC.CString.unpackAppendCString#
+                   Main.$fShowPassword2
+                   (GHC.Types.:
+                      @ GHC.Types.Char
+                      GHC.Show.$fShow(,)3
+                      (GHC.Show.showLitString
+                         x `cast` (Main.N:Password[0])
+                         Main.$fShowError3))) -}
+906a72b81a8dbd2658f8055f7825ad72
+  $fShowPassword_$cshowList :: [Main.Password] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Main.Password]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__ @ Main.Password Main.$fShowPassword1 ls s) -}
+906a72b81a8dbd2658f8055f7825ad72
+  $fShowPassword_$cshowsPrec ::
+    GHC.Types.Int -> Main.Password -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S(S),1*U(U)><L,1*U><L,U>, Inline: [2],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Main.Password)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Main.$w$cshowsPrec1 ww1 w1 w2 }) -}
+9e08b9a7eec66a0980add62d01cd4da9
+  $fShowUser :: GHC.Show.Show Main.User
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.User
+                  Main.$fShowUser_$cshowsPrec
+                  Main.$fShowUser_$cshow
+                  Main.$fShowUser_$cshowList -}
+9e08b9a7eec66a0980add62d01cd4da9
+  $fShowUser1 :: Main.User -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U(1*U,1*U)><L,U>,
+     Unfolding: (\ (w :: Main.User) (w1 :: GHC.Base.String) ->
+                 case w of ww { Main.User ww1 ww2 ->
+                 Main.$w$cshowsPrec2 0# ww1 ww2 w1 }) -}
+87e3091fb8768a35596f41ed1839f766
+  $fShowUser2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Username "#) -}
+3cdfa03f3ac0e9df1ac92800f7932095
+  $fShowUser3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("User "#) -}
+710f2f80c7a04686fb9dcf18ea2b6d07
+  $fShowUser4 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+9e08b9a7eec66a0980add62d01cd4da9
+  $fShowUser_$cshow :: Main.User -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Main.User) ->
+                 Main.$fShowUser_$cshowsPrec
+                   Main.$fShowUser4
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+9e08b9a7eec66a0980add62d01cd4da9
+  $fShowUser_$cshowList :: [Main.User] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Main.User]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__ @ Main.User Main.$fShowUser1 ls s) -}
+9e08b9a7eec66a0980add62d01cd4da9
+  $fShowUser_$cshowsPrec ::
+    GHC.Types.Int -> Main.User -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U(1*U,1*U)><L,U>,
+     Inline: [2],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Main.User)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Main.User ww3 ww4 ->
+                 Main.$w$cshowsPrec2 ww1 ww3 ww4 w2 } }) -}
+5a89998ec9d8f929cbf414a5f0d24d43
+  $fShowUsername :: GHC.Show.Show Main.Username
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Username
+                  Main.$fShowUsername_$cshowsPrec
+                  Main.$fShowUsername_$cshow
+                  Main.$fShowUsername_$cshowList -}
+5a89998ec9d8f929cbf414a5f0d24d43
+  $fShowUsername1 :: Main.Username -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <L,1*U><L,U>,
+     Unfolding: (\ (w :: Main.Username) (w1 :: GHC.Base.String) ->
+                 Main.$w$cshowsPrec3 0# w w1) -}
+5a89998ec9d8f929cbf414a5f0d24d43
+  $fShowUsername_$cshow :: Main.Username -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ (x :: Main.Username) ->
+                 GHC.CString.unpackAppendCString#
+                   Main.$fShowUser2
+                   (GHC.Types.:
+                      @ GHC.Types.Char
+                      GHC.Show.$fShow(,)3
+                      (GHC.Show.showLitString
+                         x `cast` (Main.N:Username[0])
+                         Main.$fShowError3))) -}
+5a89998ec9d8f929cbf414a5f0d24d43
+  $fShowUsername_$cshowList :: [Main.Username] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Main.Username]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__ @ Main.Username Main.$fShowUsername1 ls s) -}
+5a89998ec9d8f929cbf414a5f0d24d43
+  $fShowUsername_$cshowsPrec ::
+    GHC.Types.Int -> Main.Username -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S(S),1*U(U)><L,1*U><L,U>, Inline: [2],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Main.Username)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Main.$w$cshowsPrec3 ww1 w1 w2 }) -}
+7f91ddb08336699dbee0e5a6b5ed2078
+  $tc'Error :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5140517267958521924##
+                   6074790255068750830##
+                   Main.$trModule
+                   Main.$tc'Error2
+                   0#
+                   Main.$tc'Error1) -}
+1d713cfb7b64cd7aac86e66f33617014
+  $tc'Error1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+1bcc2254f0e174e7625724e44dceb5e7
+  $tc'Error2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Main.$tc'Error3) -}
+60bfd8da52717622053dfc9885ff1a61
+  $tc'Error3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Error"#) -}
+99b5f5a951eb1a12ccd0192ecd7d9571
+  $tc'Password :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13723162774163889209##
+                   14167434875996207269##
+                   Main.$trModule
+                   Main.$tc'Password2
+                   0#
+                   Main.$tc'Password1) -}
+ac768a09f15ed497ea631351c58a5a37
+  $tc'Password1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+5e4822ef485b30953ae2636b797d9ee5
+  $tc'Password2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Main.$tc'Password3) -}
+95b7a41cf03ac1bd024725da401f969b
+  $tc'Password3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Password"#) -}
+2fcf8bf1decadaaf76f8f72d66b7430b
+  $tc'User :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11946000597272154797##
+                   14513426697953938300##
+                   Main.$trModule
+                   Main.$tc'User2
+                   0#
+                   Main.$tc'User1) -}
+79b6144f6dc0b92368d27e4a147995e3
+  $tc'User1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+22c86b5f84a74d2f231dd5f2b7be02e7
+  $tc'User2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Main.$tc'User3) -}
+72a67a33dea96547d55a61725feeda8e
+  $tc'User3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'User"#) -}
+bc7ff381bce0f6fb9ff9c4b53b81ffca
+  $tc'Username :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6567400101730486773##
+                   6485741451029794036##
+                   Main.$trModule
+                   Main.$tc'Username2
+                   0#
+                   Main.$tc'Username1) -}
+a7df16c0316cbb1e0ad488fcee1c2e86
+  $tc'Username1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+05c582cc9f0c6374d9d662aa29f32e67
+  $tc'Username2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Main.$tc'Username3) -}
+733ed87942b7712f9f9ff1dc9e08d926
+  $tc'Username3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Username"#) -}
+175f9f909af2a838766f029a1d9251e9
+  $tcError :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14531580327786059250##
+                   15680551078421573241##
+                   Main.$trModule
+                   Main.$tcError1
+                   0#
+                   GHC.Types.krep$*) -}
+633f55ad12ed84a22297c5a870740eed
+  $tcError1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Main.$tcError2) -}
+27f75fa9cc8812d3affda42c148e40dc
+  $tcError2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Error"#) -}
+81acb5ecd70f061422641660df8e327a
+  $tcPassword :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4631930994865229806##
+                   10992209617027596548##
+                   Main.$trModule
+                   Main.$tcPassword1
+                   0#
+                   GHC.Types.krep$*) -}
+90008df83dc22db19270255a161ebc7b
+  $tcPassword1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Main.$tcPassword2) -}
+1c3a25d911b2838ece28384e822d8861
+  $tcPassword2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Password"#) -}
+c6082e0b3d88e774086c425d3bab920d
+  $tcUser :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3086115112404147262##
+                   4933156830667254212##
+                   Main.$trModule
+                   Main.$tcUser1
+                   0#
+                   GHC.Types.krep$*) -}
+42a6216b51674f2005c0d194b10537b2
+  $tcUser1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Main.$tcUser2) -}
+f7f7472eeff06ea3378882c86e5768d9
+  $tcUser2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("User"#) -}
+6564452677ee4392086b9166e6cb561a
+  $tcUsername :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15373748454731593063##
+                   10568382547340338205##
+                   Main.$trModule
+                   Main.$tcUsername1
+                   0#
+                   GHC.Types.krep$*) -}
+65f68b112891fc60a71308e44ce1d074
+  $tcUsername1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Main.$tcUsername2) -}
+865cf26342fee30e85a3e0bc6df6d87a
+  $tcUsername2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Username"#) -}
+be86c9d078d3acbf19ba91fe74a24273
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule3 Main.$trModule1) -}
+b09d86f2c49dd5176b544d8d13ddb6c5
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Main.$trModule2) -}
+e5875966b74dad2d29772660b8a75e33
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Main"#) -}
+23b03bd7d075a00f5ad1ee10e6add7b8
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Main.$trModule4) -}
+d026be77cb9ced20e35a61514e0458aa
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+5f1a9a25746fbc408ee531ffd1a5d256
+  $w$c== ::
+    Main.Username
+    -> Main.Password
+    -> Main.Username
+    -> Main.Password
+    -> GHC.Types.Bool
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S,1*U><L,1*U><S,1*U><L,1*U>, Inline: [2],
+     Unfolding: (\ (ww :: Main.Username)
+                   (ww1 :: Main.Password)
+                   (ww2 :: Main.Username)
+                   (ww3 :: Main.Password) ->
+                 case GHC.Base.eqString
+                        ww `cast` (Main.N:Username[0])
+                        ww2 `cast` (Main.N:Username[0]) of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> GHC.Base.eqString
+                        ww1 `cast` (Main.N:Password[0])
+                        ww3 `cast` (Main.N:Password[0]) }) -}
+f23a4be7d771beea64688ca1b8f4045e
+  $w$cshowsPrec ::
+    GHC.Prim.Int# -> Main.Error -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, Strictness: <S,U><L,1*U><L,U>, Inline: [2],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (w :: Main.Error)
+                   (w1 :: GHC.Base.String) ->
+                 case GHC.Prim.>=# ww 11# of lwild {
+                   DEFAULT
+                   -> GHC.CString.unpackAppendCString#
+                        Main.$fShowError2
+                        (GHC.Types.:
+                           @ GHC.Types.Char
+                           GHC.Show.$fShow(,)3
+                           (GHC.Show.showLitString
+                              w `cast` (Main.N:Error[0])
+                              (GHC.Types.: @ GHC.Types.Char GHC.Show.$fShow(,)3 w1)))
+                   1#
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.$fShow(,)4
+                        (GHC.CString.unpackAppendCString#
+                           Main.$fShowError2
+                           (GHC.Types.:
+                              @ GHC.Types.Char
+                              GHC.Show.$fShow(,)3
+                              (GHC.Show.showLitString
+                                 w `cast` (Main.N:Error[0])
+                                 (GHC.Types.:
+                                    @ GHC.Types.Char
+                                    GHC.Show.$fShow(,)3
+                                    (GHC.Types.: @ GHC.Types.Char GHC.Show.$fShow(,)2 w1))))) }) -}
+906a72b81a8dbd2658f8055f7825ad72
+  $w$cshowsPrec1 ::
+    GHC.Prim.Int#
+    -> Main.Password -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, Strictness: <S,U><L,1*U><L,U>, Inline: [2],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (w :: Main.Password)
+                   (w1 :: GHC.Base.String) ->
+                 case GHC.Prim.>=# ww 11# of lwild {
+                   DEFAULT
+                   -> GHC.CString.unpackAppendCString#
+                        Main.$fShowPassword2
+                        (GHC.Types.:
+                           @ GHC.Types.Char
+                           GHC.Show.$fShow(,)3
+                           (GHC.Show.showLitString
+                              w `cast` (Main.N:Password[0])
+                              (GHC.Types.: @ GHC.Types.Char GHC.Show.$fShow(,)3 w1)))
+                   1#
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.$fShow(,)4
+                        (GHC.CString.unpackAppendCString#
+                           Main.$fShowPassword2
+                           (GHC.Types.:
+                              @ GHC.Types.Char
+                              GHC.Show.$fShow(,)3
+                              (GHC.Show.showLitString
+                                 w `cast` (Main.N:Password[0])
+                                 (GHC.Types.:
+                                    @ GHC.Types.Char
+                                    GHC.Show.$fShow(,)3
+                                    (GHC.Types.: @ GHC.Types.Char GHC.Show.$fShow(,)2 w1))))) }) -}
+d78cb2328567cd273812302144ffd3c1
+  $w$cshowsPrec2 ::
+    GHC.Prim.Int#
+    -> Main.Username
+    -> Main.Password
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 4, Strictness: <S,U><L,1*U><L,1*U><L,U>, Inline: [2],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: Main.Username)
+                   (ww2 :: Main.Password)
+                   (w :: GHC.Base.String) ->
+                 case GHC.Prim.>=# ww 11# of lwild {
+                   DEFAULT
+                   -> GHC.CString.unpackAppendCString#
+                        Main.$fShowUser3
+                        (Main.$w$cshowsPrec3
+                           11#
+                           ww1
+                           (GHC.Types.:
+                              @ GHC.Types.Char
+                              GHC.Show.showSpace1
+                              (Main.$w$cshowsPrec1 11# ww2 w)))
+                   1#
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.$fShow(,)4
+                        (GHC.CString.unpackAppendCString#
+                           Main.$fShowUser3
+                           (Main.$w$cshowsPrec3
+                              11#
+                              ww1
+                              (GHC.Types.:
+                                 @ GHC.Types.Char
+                                 GHC.Show.showSpace1
+                                 (Main.$w$cshowsPrec1
+                                    11#
+                                    ww2
+                                    (GHC.Types.: @ GHC.Types.Char GHC.Show.$fShow(,)2 w))))) }) -}
+5a89998ec9d8f929cbf414a5f0d24d43
+  $w$cshowsPrec3 ::
+    GHC.Prim.Int#
+    -> Main.Username -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, Strictness: <S,U><L,1*U><L,U>, Inline: [2],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (w :: Main.Username)
+                   (w1 :: GHC.Base.String) ->
+                 case GHC.Prim.>=# ww 11# of lwild {
+                   DEFAULT
+                   -> GHC.CString.unpackAppendCString#
+                        Main.$fShowUser2
+                        (GHC.Types.:
+                           @ GHC.Types.Char
+                           GHC.Show.$fShow(,)3
+                           (GHC.Show.showLitString
+                              w `cast` (Main.N:Username[0])
+                              (GHC.Types.: @ GHC.Types.Char GHC.Show.$fShow(,)3 w1)))
+                   1#
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.$fShow(,)4
+                        (GHC.CString.unpackAppendCString#
+                           Main.$fShowUser2
+                           (GHC.Types.:
+                              @ GHC.Types.Char
+                              GHC.Show.$fShow(,)3
+                              (GHC.Show.showLitString
+                                 w `cast` (Main.N:Username[0])
+                                 (GHC.Types.:
+                                    @ GHC.Types.Char
+                                    GHC.Show.$fShow(,)3
+                                    (GHC.Types.: @ GHC.Types.Char GHC.Show.$fShow(,)2 w1))))) }) -}
+f23a4be7d771beea64688ca1b8f4045e
+  newtype Error = Error GHC.Base.String
+906a72b81a8dbd2658f8055f7825ad72
+  newtype Password = Password GHC.Base.String
+9e08b9a7eec66a0980add62d01cd4da9
+  data User = User Main.Username Main.Password
+5a89998ec9d8f929cbf414a5f0d24d43
+  newtype Username = Username GHC.Base.String
+9880318e285f53d475deae27d5fd1f34
+  allAlpha ::
+    GHC.Base.String -> Data.Either.Either Main.Error GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Char]) ->
+                 case ds of wild {
+                   [] -> Main.allAlpha4
+                   : ipv ipv1
+                   -> let {
+                        exit :: Data.Either.Either Main.Error GHC.Base.String <join 0>
+                        = Data.Either.Right @ Main.Error @ GHC.Base.String wild
+                      } in
+                      letrec {
+                        go :: [GHC.Types.Char]
+                              -> Data.Either.Either Main.Error GHC.Base.String
+                          <join 1> {- Arity: 1, Strictness: <S,1*U> -}
+                        = \ (ds1 :: [GHC.Types.Char]) ->
+                          case ds1 of wild1 {
+                            [] -> exit
+                            : y ys
+                            -> case y of wild2 { GHC.Types.C# c# ->
+                               case {__pkg_ccall base-4.12.0.0 GHC.Prim.Int#
+                                                               -> GHC.Prim.State# GHC.Prim.RealWorld
+                                                               -> (# GHC.Prim.State#
+                                                                       GHC.Prim.RealWorld,
+                                                                     GHC.Prim.Int# #)}
+                                      (GHC.Prim.ord# c#)
+                                      GHC.Prim.realWorld# of wild3 { (#,#) ds2 ds3 ->
+                               case ds3 of wild4 { DEFAULT -> go ys 0# -> Main.allAlpha1 } } } }
+                      } in
+                      go wild }) -}
+f4876512af29b8b7502e9af3cc800ea5
+  allAlpha1 :: Data.Either.Either Main.Error GHC.Base.String
+  {- Strictness: m1,
+     Unfolding: (Data.Either.Left
+                   @ Main.Error
+                   @ GHC.Base.String
+                   Main.allAlpha2 `cast` (Sym (Main.N:Error[0]))) -}
+fa44d14999b94e567342796fb7c7adbb
+  allAlpha2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Main.allAlpha3) -}
+df46dd31e586bbf8a6703d5b19797c00
+  allAlpha3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Your password cannot contain whitespace or special characters"#) -}
+428c36fa99241e6a6fdbe8ab01f527ce
+  allAlpha4 :: Data.Either.Either Main.Error GHC.Base.String
+  {- Strictness: m1,
+     Unfolding: (Data.Either.Left
+                   @ Main.Error
+                   @ GHC.Base.String
+                   Main.allAlpha5 `cast` (Sym (Main.N:Error[0]))) -}
+b099a173de6a17cc523934c9ab417dc6
+  allAlpha5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Main.allAlpha6) -}
+2de79957d35724d2556111bddb1c7429
+  allAlpha6 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Your password cannot be empty"#) -}
+10b4ff91a6b656746a9cff6951abce5a
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+21e22370924c8cc72b2b9999516f61ac
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case (GHC.IO.Handle.Text.hPutStr'
+                         GHC.IO.Handle.FD.stdout
+                         Main.main6
+                         GHC.Types.True)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Internals.wantReadableHandle_1
+                        @ GHC.Base.String
+                        GHC.IO.Handle.Text.hGetLine4
+                        GHC.IO.Handle.FD.stdin
+                        GHC.IO.Handle.Text.hGetLine2
+                          `cast`
+                        (<GHC.IO.Handle.Types.Handle__>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
+                        ipv of ds { (#,#) ipv2 ipv3 ->
+                 case (GHC.IO.Handle.Text.hPutStr'
+                         GHC.IO.Handle.FD.stdout
+                         Main.main4
+                         GHC.Types.True)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        ipv2 of ds2 { (#,#) ipv4 ipv5 ->
+                 case GHC.IO.Handle.Internals.wantReadableHandle_1
+                        @ GHC.Base.String
+                        GHC.IO.Handle.Text.hGetLine4
+                        GHC.IO.Handle.FD.stdin
+                        GHC.IO.Handle.Text.hGetLine2
+                          `cast`
+                        (<GHC.IO.Handle.Types.Handle__>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
+                        ipv4 of ds3 { (#,#) ipv6 ipv7 ->
+                 (GHC.IO.Handle.Text.hPutStr'
+                    GHC.IO.Handle.FD.stdout
+                    (case Main.makeUser
+                            ipv3 `cast` (Sym (Main.N:Username[0]))
+                            ipv7 `cast` (Sym (Main.N:Password[0])) of wild {
+                       Data.Either.Left b1
+                       -> GHC.Base.++
+                            @ GHC.Types.Char
+                            Data.Either.$fShowEither4
+                            (GHC.Types.:
+                               @ GHC.Types.Char
+                               GHC.Show.$fShow(,)4
+                               (GHC.CString.unpackAppendCString#
+                                  Main.$fShowError2
+                                  (GHC.Types.:
+                                     @ GHC.Types.Char
+                                     GHC.Show.$fShow(,)3
+                                     (GHC.Show.showLitString
+                                        b1 `cast` (Main.N:Error[0])
+                                        Main.main2))))
+                       Data.Either.Right b1
+                       -> GHC.Base.++
+                            @ GHC.Types.Char
+                            Data.Either.$fShowEither2
+                            (case b1 of ww { Main.User ww1 ww2 ->
+                             Main.$w$cshowsPrec2
+                               11#
+                               ww1
+                               ww2
+                               (GHC.Types.[] @ GHC.Types.Char) }) })
+                    GHC.Types.True)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv6 } } } }) -}
+c7db0d9819c182f7c6c593ce3e233704
+  main2 :: [GHC.Types.Char]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.$fShow(,)3
+                   Main.main3) -}
+1f7e98e1b0dbe34cedf26a8ca9b9c13d
+  main3 :: [GHC.Types.Char]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.$fShow(,)2
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+5241ece49d3dbc113d79419e75554204
+  main4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Main.main5) -}
+6843f8dddd34db7e173e61afb81a6d1b
+  main5 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Please enter a password"#) -}
+e0c5f3a5857a879ef4529ec0814b990e
+  main6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Main.main7) -}
+67358de110db96e1a9f8a912ef96df6b
+  main7 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Please enter a username"#) -}
+ffd269d8942a142a779a9b3e34f532dd
+  main8 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+62f656de9e58663c27d0bdd9e2c3fae5
+  makeUser ::
+    Main.Username
+    -> Main.Password -> Data.Either.Either Main.Error Main.User
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ (name :: Main.Username)
+                   (password :: Main.Password) ->
+                 case Main.stripSpace name `cast` (Main.N:Username[0]) of wild {
+                   Data.Either.Left l -> Data.Either.Left @ Main.Error @ Main.User l
+                   Data.Either.Right r
+                   -> case r of wild1 {
+                        [] -> Main.makeUser8
+                        : ipv ipv1
+                        -> let {
+                             $j :: Data.Either.Either Main.Error Main.User <join 0>
+                             = case GHC.List.$wlenAcc
+                                      @ GHC.Types.Char
+                                      wild1
+                                      0# of ww2 { DEFAULT ->
+                               case GHC.Prim.># ww2 15# of lwild {
+                                 DEFAULT
+                                 -> case Main.stripSpace
+                                           password `cast` (Main.N:Password[0]) of wild2 {
+                                      Data.Either.Left l
+                                      -> Data.Either.Left @ Main.Error @ Main.User l
+                                      Data.Either.Right r1
+                                      -> case r1 of wild3 {
+                                           [] -> Main.makeUser8
+                                           : ipv2 ipv3
+                                           -> let {
+                                                $j1 :: Data.Either.Either Main.Error Main.User
+                                                  <join 0>
+                                                = case GHC.List.$wlenAcc
+                                                         @ GHC.Types.Char
+                                                         wild3
+                                                         0# of ww1 { DEFAULT ->
+                                                  case GHC.Prim.># ww1 20# of lwild1 {
+                                                    DEFAULT
+                                                    -> Data.Either.Right
+                                                         @ Main.Error
+                                                         @ Main.User
+                                                         (Main.User
+                                                            wild1 `cast` (Sym (Main.N:Username[0]))
+                                                            wild3 `cast` (Sym (Main.N:Password[0])))
+                                                    1# -> Main.makeUser5 } }
+                                              } in
+                                              letrec {
+                                                go :: [GHC.Types.Char]
+                                                      -> Data.Either.Either Main.Error Main.User
+                                                  <join 1> {- Arity: 1, Strictness: <S,1*U> -}
+                                                = \ (ds :: [GHC.Types.Char]) ->
+                                                  case ds of wild4 {
+                                                    [] -> $j1
+                                                    : y ys
+                                                    -> case y of wild5 { GHC.Types.C# c# ->
+                                                       case {__pkg_ccall base-4.12.0.0 GHC.Prim.Int#
+                                                                                       -> GHC.Prim.State#
+                                                                                            GHC.Prim.RealWorld
+                                                                                       -> (# GHC.Prim.State#
+                                                                                               GHC.Prim.RealWorld,
+                                                                                             GHC.Prim.Int# #)}
+                                                              (GHC.Prim.ord# c#)
+                                                              GHC.Prim.realWorld# of wild6 { (#,#) ds1 ds2 ->
+                                                       case ds2 of wild7 {
+                                                         DEFAULT -> go ys
+                                                         0# -> Main.makeUser4 } } } }
+                                              } in
+                                              go wild3 } }
+                                 1# -> Main.makeUser1 } }
+                           } in
+                           letrec {
+                             go :: [GHC.Types.Char] -> Data.Either.Either Main.Error Main.User
+                               <join 1> {- Arity: 1, Strictness: <S,1*U> -}
+                             = \ (ds :: [GHC.Types.Char]) ->
+                               case ds of wild2 {
+                                 [] -> $j
+                                 : y ys
+                                 -> case y of wild3 { GHC.Types.C# c# ->
+                                    case {__pkg_ccall base-4.12.0.0 GHC.Prim.Int#
+                                                                    -> GHC.Prim.State#
+                                                                         GHC.Prim.RealWorld
+                                                                    -> (# GHC.Prim.State#
+                                                                            GHC.Prim.RealWorld,
+                                                                          GHC.Prim.Int# #)}
+                                           (GHC.Prim.ord# c#)
+                                           GHC.Prim.realWorld# of wild4 { (#,#) ds1 ds2 ->
+                                    case ds2 of wild5 {
+                                      DEFAULT -> go ys 0# -> Main.makeUser4 } } } }
+                           } in
+                           go wild1 } }) -}
+a0bbb229c853e66884f6c589b563b989
+  makeUser1 :: Data.Either.Either Main.Error Main.User
+  {- Strictness: m1,
+     Unfolding: (Data.Either.Left
+                   @ Main.Error
+                   @ Main.User
+                   Main.makeUser2 `cast` (Sym (Main.N:Error[0]))) -}
+e11fa170067f5d224868d88f500c2184
+  makeUser2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Main.makeUser3) -}
+8fc61188cd2f87e5c4e09742702c4c54
+  makeUser3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Your username cannot be longer than 15 characters"#) -}
+e93abd79932100e3ce9b53c0f05ac353
+  makeUser4 :: Data.Either.Either Main.Error Main.User
+  {- Strictness: m1,
+     Unfolding: (Data.Either.Left
+                   @ Main.Error
+                   @ Main.User
+                   Main.allAlpha2 `cast` (Sym (Main.N:Error[0]))) -}
+0e71e78dcea35088a86efca5bc8c6e3b
+  makeUser5 :: Data.Either.Either Main.Error Main.User
+  {- Strictness: m1,
+     Unfolding: (Data.Either.Left
+                   @ Main.Error
+                   @ Main.User
+                   Main.makeUser6 `cast` (Sym (Main.N:Error[0]))) -}
+38500f8e7eed0743fc27a4d46cd736cc
+  makeUser6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Main.makeUser7) -}
+d946a17f85b6730f54a757412c52cb96
+  makeUser7 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Your password cannot be longer than 20 characters"#) -}
+b6c4920cc70c659339693b0933f3e3b4
+  makeUser8 :: Data.Either.Either Main.Error Main.User
+  {- Strictness: m1,
+     Unfolding: (Data.Either.Left
+                   @ Main.Error
+                   @ Main.User
+                   Main.allAlpha5 `cast` (Sym (Main.N:Error[0]))) -}
+fa69584c1221ff8b39bb26cc5b9ad9e2
+  passwordLength ::
+    GHC.Base.String -> Data.Either.Either Main.Error Main.Password
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Char]) ->
+                 case ds of wild {
+                   [] -> Main.passwordLength2
+                   : ipv ipv1
+                   -> case GHC.List.$wlenAcc
+                             @ GHC.Types.Char
+                             wild
+                             0# of ww2 { DEFAULT ->
+                      case GHC.Prim.># ww2 20# of lwild {
+                        DEFAULT
+                        -> Data.Either.Right
+                             @ Main.Error
+                             @ Main.Password
+                             wild `cast` (Sym (Main.N:Password[0]))
+                        1# -> Main.passwordLength1 } } }) -}
+a52af737ac27a62527520cca4d5db542
+  passwordLength1 :: Data.Either.Either Main.Error Main.Password
+  {- Strictness: m1,
+     Unfolding: (Data.Either.Left
+                   @ Main.Error
+                   @ Main.Password
+                   Main.makeUser6 `cast` (Sym (Main.N:Error[0]))) -}
+edd6f04d7e85b7bee7a57b454a7c2693
+  passwordLength2 :: Data.Either.Either Main.Error Main.Password
+  {- Strictness: m1,
+     Unfolding: (Data.Either.Left
+                   @ Main.Error
+                   @ Main.Password
+                   Main.allAlpha5 `cast` (Sym (Main.N:Error[0]))) -}
+de5671e561e1d0a3e509fafb12d31856
+  stripSpace ::
+    GHC.Base.String -> Data.Either.Either Main.Error GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U> -}
+3e9e7dfdbd7c47fe0b4bbf0dbb00518a
+  usernameLength ::
+    GHC.Base.String -> Data.Either.Either Main.Error Main.Username
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (username :: GHC.Base.String) ->
+                 case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        username
+                        0# of ww2 { DEFAULT ->
+                 case GHC.Prim.># ww2 15# of lwild {
+                   DEFAULT
+                   -> Data.Either.Right
+                        @ Main.Error
+                        @ Main.Username
+                        username `cast` (Sym (Main.N:Username[0]))
+                   1# -> Main.usernameLength1 } }) -}
+0efb303b3756aaa304fdb107fedcf583
+  usernameLength1 :: Data.Either.Either Main.Error Main.Username
+  {- Strictness: m1,
+     Unfolding: (Data.Either.Left
+                   @ Main.Error
+                   @ Main.Username
+                   Main.makeUser2 `cast` (Sym (Main.N:Error[0]))) -}
+cc8ec8a55e00a18c83df3ed8a691a459
+  validatePassword ::
+    Main.Password -> Data.Either.Either Main.Error Main.Password
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: Main.Password) ->
+                 case Main.stripSpace ds `cast` (Main.N:Password[0]) of wild {
+                   Data.Either.Left l
+                   -> Data.Either.Left @ Main.Error @ Main.Password l
+                   Data.Either.Right r
+                   -> case r of wild1 {
+                        [] -> Main.passwordLength2
+                        : ipv ipv1
+                        -> let {
+                             $j :: Data.Either.Either Main.Error Main.Password <join 0>
+                             = case GHC.List.$wlenAcc
+                                      @ GHC.Types.Char
+                                      wild1
+                                      0# of ww2 { DEFAULT ->
+                               case GHC.Prim.># ww2 20# of lwild {
+                                 DEFAULT
+                                 -> Data.Either.Right
+                                      @ Main.Error
+                                      @ Main.Password
+                                      wild1 `cast` (Sym (Main.N:Password[0]))
+                                 1# -> Main.passwordLength1 } }
+                           } in
+                           letrec {
+                             go :: [GHC.Types.Char]
+                                   -> Data.Either.Either Main.Error Main.Password
+                               <join 1> {- Arity: 1, Strictness: <S,1*U> -}
+                             = \ (ds1 :: [GHC.Types.Char]) ->
+                               case ds1 of wild2 {
+                                 [] -> $j
+                                 : y ys
+                                 -> case y of wild3 { GHC.Types.C# c# ->
+                                    case {__pkg_ccall base-4.12.0.0 GHC.Prim.Int#
+                                                                    -> GHC.Prim.State#
+                                                                         GHC.Prim.RealWorld
+                                                                    -> (# GHC.Prim.State#
+                                                                            GHC.Prim.RealWorld,
+                                                                          GHC.Prim.Int# #)}
+                                           (GHC.Prim.ord# c#)
+                                           GHC.Prim.realWorld# of wild4 { (#,#) ds2 ds3 ->
+                                    case ds3 of wild5 {
+                                      DEFAULT -> go ys 0# -> Main.validatePassword1 } } } }
+                           } in
+                           go wild1 } }) -}
+87177e2b1d9c954803e8803fc8bc0362
+  validatePassword1 :: Data.Either.Either Main.Error Main.Password
+  {- Strictness: m1,
+     Unfolding: (Data.Either.Left
+                   @ Main.Error
+                   @ Main.Password
+                   Main.allAlpha2 `cast` (Sym (Main.N:Error[0]))) -}
+e3bc87bd744a2ec566b2ffd8220ab85c
+  validateUsername ::
+    Main.Username -> Data.Either.Either Main.Error Main.Username
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: Main.Username) ->
+                 case Main.stripSpace ds `cast` (Main.N:Username[0]) of wild {
+                   Data.Either.Left l
+                   -> Data.Either.Left @ Main.Error @ Main.Username l
+                   Data.Either.Right r
+                   -> case r of wild1 {
+                        [] -> Main.validateUsername2
+                        : ipv ipv1
+                        -> let {
+                             $j :: Data.Either.Either Main.Error Main.Username <join 0>
+                             = case GHC.List.$wlenAcc
+                                      @ GHC.Types.Char
+                                      wild1
+                                      0# of ww2 { DEFAULT ->
+                               case GHC.Prim.># ww2 15# of lwild {
+                                 DEFAULT
+                                 -> Data.Either.Right
+                                      @ Main.Error
+                                      @ Main.Username
+                                      wild1 `cast` (Sym (Main.N:Username[0]))
+                                 1# -> Main.usernameLength1 } }
+                           } in
+                           letrec {
+                             go :: [GHC.Types.Char]
+                                   -> Data.Either.Either Main.Error Main.Username
+                               <join 1> {- Arity: 1, Strictness: <S,1*U> -}
+                             = \ (ds1 :: [GHC.Types.Char]) ->
+                               case ds1 of wild2 {
+                                 [] -> $j
+                                 : y ys
+                                 -> case y of wild3 { GHC.Types.C# c# ->
+                                    case {__pkg_ccall base-4.12.0.0 GHC.Prim.Int#
+                                                                    -> GHC.Prim.State#
+                                                                         GHC.Prim.RealWorld
+                                                                    -> (# GHC.Prim.State#
+                                                                            GHC.Prim.RealWorld,
+                                                                          GHC.Prim.Int# #)}
+                                           (GHC.Prim.ord# c#)
+                                           GHC.Prim.realWorld# of wild4 { (#,#) ds2 ds3 ->
+                                    case ds3 of wild5 {
+                                      DEFAULT -> go ys 0# -> Main.validateUsername1 } } } }
+                           } in
+                           go wild1 } }) -}
+e2ff75d6c747702ebb987d15776eb284
+  validateUsername1 :: Data.Either.Either Main.Error Main.Username
+  {- Strictness: m1,
+     Unfolding: (Data.Either.Left
+                   @ Main.Error
+                   @ Main.Username
+                   Main.allAlpha2 `cast` (Sym (Main.N:Error[0]))) -}
+01c8b9cf8fe1d77c3affa765b3ba2650
+  validateUsername2 :: Data.Either.Either Main.Error Main.Username
+  {- Strictness: m1,
+     Unfolding: (Data.Either.Left
+                   @ Main.Error
+                   @ Main.Username
+                   Main.allAlpha5 `cast` (Sym (Main.N:Error[0]))) -}
+instance [safe] GHC.Classes.Eq [Main.Error] = Main.$fEqError
+instance [safe] GHC.Classes.Eq [Main.Password] = Main.$fEqPassword
+instance [safe] GHC.Classes.Eq [Main.User] = Main.$fEqUser
+instance [safe] GHC.Classes.Eq [Main.Username] = Main.$fEqUsername
+instance [safe] GHC.Show.Show [Main.Error] = Main.$fShowError
+instance [safe] GHC.Show.Show [Main.Password] = Main.$fShowPassword
+instance [safe] GHC.Show.Show [Main.User] = Main.$fShowUser
+instance [safe] GHC.Show.Show [Main.Username] = Main.$fShowUsername
+trusted: safe
+require own pkg trusted: False
+module header:
+  Nothing
+declaration docs:
+arg docs:
+

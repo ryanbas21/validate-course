@@ -1,0 +1,6 @@
+Configuring validation-1...
+Preprocessing library for validation-1..
+Building library for validation-1..
+[1 of 1] Compiling Data.Validation  ( src/Data/Validation.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Validation.o )
+Installing library in /home/cheus/.stack/snapshots/x86_64-linux/lts-13.6/8.6.3/lib/x86_64-linux-ghc-8.6.3/validation-1-K1OZeNPHKVkLs1zPd8Aeov
+Registering library for validation-1..

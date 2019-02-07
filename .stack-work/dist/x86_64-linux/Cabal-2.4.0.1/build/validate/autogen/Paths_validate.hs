@@ -30,7 +30,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/home/cheus/programming/haskell/validate/.stack-work/install/x86_64-linux/lts-13.6/8.6.3/bin"
-libdir     = "/home/cheus/programming/haskell/validate/.stack-work/install/x86_64-linux/lts-13.6/8.6.3/lib/x86_64-linux-ghc-8.6.3/validate-0.1.0.0-6Bk4Z44nR4QHBjnhTV4ij7-validate"
+libdir     = "/home/cheus/programming/haskell/validate/.stack-work/install/x86_64-linux/lts-13.6/8.6.3/lib/x86_64-linux-ghc-8.6.3/validate-0.1.0.0-Dfl0TM4gsAwKly7NKlAQyE-validate"
 dynlibdir  = "/home/cheus/programming/haskell/validate/.stack-work/install/x86_64-linux/lts-13.6/8.6.3/lib/x86_64-linux-ghc-8.6.3"
 datadir    = "/home/cheus/programming/haskell/validate/.stack-work/install/x86_64-linux/lts-13.6/8.6.3/share/x86_64-linux-ghc-8.6.3/validate-0.1.0.0"
 libexecdir = "/home/cheus/programming/haskell/validate/.stack-work/install/x86_64-linux/lts-13.6/8.6.3/libexec/x86_64-linux-ghc-8.6.3/validate-0.1.0.0"

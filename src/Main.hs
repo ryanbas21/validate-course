@@ -1,59 +1,66 @@
 module Main where
 
   import Data.Char (isAlphaNum, isSpace)
+  import Data.Validation
+  import Data.Semigroup
 
   newtype Password =
     Password String deriving (Eq, Show)
 
-  newtype Error = 
-    Error String deriving (Eq, Show)
-
+  newtype Error  = 
+    Error [String] deriving (Eq, Show)
+  
+  instance Semigroup  Error where
+    Error xs <> Error ys = Error $ xs <> ys
+    
   newtype Username =
     Username String deriving (Eq, Show)
 
   data User = User Username Password 
     deriving (Eq, Show) 
-
-  passwordLength :: String -> Either Error Password
-  passwordLength "" = Left $ Error "Your password cannot be empty"
+  
+  passwordLength :: String -> Validation Error Password
+  passwordLength "" = Failure $ Error ["Your password cannot be empty"]
   passwordLength password = 
     case (length password > 20) of
-      True -> Left $ Error "Your password cannot be longer than 20 characters"
-      False -> Right (Password password) 
+      True -> Failure $ Error ["Your password cannot be longer than 20 characters"] 
+      False -> Success (Password password) 
 
-  usernameLength :: String -> Either Error Username
+  usernameLength :: String -> Validation Error Username
   usernameLength username = 
     case (length username > 15) of
-      True -> Left $ Error "Your username cannot be longer than 15 characters"
-      False -> Right $ Username username
+      True -> Failure $ Error ["Your username cannot be longer than 15 characters"]
+      False -> Success $ Username username
   
-  allAlpha :: String -> Either Error String
-  allAlpha "" = Left (Error "Your password cannot be empty")
+  allAlpha :: String -> Validation Error  String
+  allAlpha "" = Failure $ Error [ "Your password cannot be empty"]
   allAlpha xs = 
     case (all isAlphaNum xs) of 
-      False -> Left $ Error "Your password cannot contain whitespace or special characters" 
-      True -> Right xs
+      False -> Failure $ Error [ "Your password cannot contain whitespace or special characters" ]
+      True -> Success xs
   
-  stripSpace :: String -> Either Error String
-  stripSpace "" = Left $ Error "Cannot be left blank"
+  stripSpace :: String -> Validation Error  String
+  stripSpace "" = Failure $ Error  ["Cannot be left blank"]
   stripSpace (x:xs) = 
     case (isSpace x) of 
       True -> stripSpace xs
-      False -> Right (x:xs)
+      False -> Success (x:xs)
 
-  validatePassword :: Password -> Either Error Password
+  validatePassword :: Password -> Validation Error Password
   validatePassword (Password password) =
-    stripSpace password 
-    >>= allAlpha 
-    >>= passwordLength 
+    case stripSpace password of
+      Failure err -> Failure err
+      Success password' -> 
+        allAlpha password' *> passwordLength password'  
 
-  validateUsername :: Username -> Either Error Username
+  validateUsername :: Username -> Validation Error Username
   validateUsername (Username username) = 
-    stripSpace username 
-    >>= allAlpha 
-    >>= usernameLength
+    case stripSpace username of 
+      Failure err -> Failure err
+      Success name -> 
+        allAlpha name *> usernameLength name 
 
-  makeUser :: Username -> Password -> Either Error User
+  makeUser :: Username -> Password -> Validation Error User
   makeUser name password =
     User <$> validateUsername name 
     <*> validatePassword password
@@ -66,4 +73,4 @@ module Main where
     password <- Password <$> getLine
     print (makeUser username password) 
 
-
+    
