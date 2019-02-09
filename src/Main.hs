@@ -60,10 +60,32 @@ module Main where
       Success name -> 
         allAlpha name *> usernameLength name 
 
+  passwordErrors :: Password -> Validation Error Password
+  passwordErrors password = 
+    case validatePassword password of
+      Failure err -> Failure $ Error ["Invalid Password: "] <> err 
+      Success password' -> Success password'
+
+  usernameErrors :: Username -> Validation Error Username
+  usernameErrors username =
+    case validateUsername username of
+      Failure err -> Failure $ Error ["Invalid username" ] <> err
+      Success name -> Success name
+
+  errorCoerce :: Error -> [String]
+  errorCoerce (Error err) = err
+
+  display :: Username -> Password -> IO ()
+  display username password = 
+    case makeUser username password of
+      Failure err ->   putStrLn $ unlines $ errorCoerce err 
+      Success (User (Username name) password) -> putStrLn ("Welcome " ++ name)
+
+
   makeUser :: Username -> Password -> Validation Error User
   makeUser name password =
-    User <$> validateUsername name 
-    <*> validatePassword password
+    User <$> usernameErrors name 
+    <*> passwordErrors password
   
   main :: IO ()
   main = do
@@ -71,6 +93,5 @@ module Main where
     username <- Username <$> getLine
     putStrLn "Please enter a password"
     password <- Password <$> getLine
-    print (makeUser username password) 
-
-    
+    putStrLn ""
+    display username password 
